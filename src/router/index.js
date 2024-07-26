@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AnnouncmentForm from '../components/AnnouncmentForm.vue';
+import AnnouncmentForm from '../components/AnnouncementForm.vue';
 import AnnouncementListing from '../components/AnnouncementListing.vue';
+import AnnouncementCalendar from '../components/AnnouncementCalendar.vue';
 
 const routes = [
   { path: '/', component: AnnouncmentForm },
-  { path: '/listings', component: AnnouncementListing }
+  { path: '/listings', component: AnnouncementListing },
+  { path: '/calendar', component: AnnouncementCalendar }
 ];
 
 const router = createRouter({

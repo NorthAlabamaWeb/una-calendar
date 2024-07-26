@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Announcement Form</router-link>
       <router-link to="/listings">Announcement Listings</router-link>
+      <router-link to="/calendar">Announcement Calendar</router-link>
     </nav>
     <router-view />
   </div>

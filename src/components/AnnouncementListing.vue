@@ -7,6 +7,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Message</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
@@ -14,6 +15,7 @@
             <td>{{ entry.name }}</td>
             <td>{{ entry.email }}</td>
             <td>{{ entry.message }}</td>
+            <td>{{ formatDate(entry.date) }}</td>
           </tr>
           <tr v-if="entries.length === 0">
             <td colspan="3">No entries found</td>
@@ -27,8 +29,15 @@
   import { computed } from 'vue';
   import { announcementStore } from '../stores/announcementStore';
   
-  // Get the entries from the store
+  
   const entries = computed(() => announcementStore.entries);
+
+  
+const formatDate = (date) => {
+if (!date) return '';
+const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+return new Date(date).toLocaleDateString(undefined, options);
+};
   </script>
   
   <style scoped>

@@ -16,6 +16,11 @@
           <label for="message">Message:</label>
           <textarea id="message" v-model="form.message" required></textarea>
         </div>
+
+        <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" v-model="form.date" required />
+        </div>
   
         <button type="submit">Submit</button>
       </form>
@@ -30,7 +35,8 @@ import { announcementStore } from '../stores/announcementStore';
 const form = ref({
   name: '',
   email: '',
-  message: ''
+  message: '',
+  date: ''  
 });
 
 // Handle form submission
@@ -42,7 +48,8 @@ const handleSubmit = () => {
   form.value = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    date: ''
   };
 };
 </script>
